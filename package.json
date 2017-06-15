@@ -32,8 +32,8 @@
   },
   "private": true,
   "scripts": {
-    "deploy": "gh-pages -d build",
     "bundle": "node node_modules/react-vr/scripts/bundle.js",
+    "deploy": "gh-pages -d vr/build",
     "devtools": "react-devtools",
     "open": "node -e \"require('xopen')('http://localhost:8081/vr/')\"",
     "precommit": "lint-staged",
