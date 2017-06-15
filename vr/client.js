@@ -3,10 +3,10 @@
 // If you want to modify your application, start in "index.vr.js"
 
 // Auto-generated content.
-import {VRInstance} from 'react-vr-web';
+import { VRInstance } from 'react-vr-web';
 
 function init(bundle, parent, options) {
-  const vr = new VRInstance(bundle, 'Sample', parent, {
+  const vr = new VRInstance(bundle, 'ReactVRSample', parent, {
     // Add custom options here
     ...options,
   });
@@ -18,4 +18,4 @@ function init(bundle, parent, options) {
   return vr;
 }
 
-window.ReactVR = {init};
+window.ReactVR = { init };
