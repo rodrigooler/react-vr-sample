@@ -1,14 +1,6 @@
 {
   "name": "Sample",
   "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node -e \"console.log('open browser at http://localhost:8081/vr/\\n\\n');\" && node node_modules/react-native/local-cli/cli.js start",
-    "bundle": "node node_modules/react-vr/scripts/bundle.js",
-    "open": "node -e \"require('xopen')('http://localhost:8081/vr/')\"",
-    "devtools": "react-devtools",
-    "test": "jest"
-  },
   "dependencies": {
     "ovrui": "^1.1.0",
     "react": "~15.4.1",
@@ -30,5 +22,20 @@
   },
   "jest": {
     "preset": "react-vr"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote true --trailing-comma all --print-width 80",
+      "git add"
+    ]
+  },
+  "private": true,
+  "scripts": {
+    "bundle": "node node_modules/react-vr/scripts/bundle.js",
+    "devtools": "react-devtools",
+    "open": "node -e \"require('xopen')('http://localhost:8081/vr/')\"",
+    "precommit": "lint-staged",
+    "start": "node -e \"console.log('open browser at http://localhost:8081/vr/\\n\\n');\" && node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
   }
 }
