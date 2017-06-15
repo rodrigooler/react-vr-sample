@@ -12,6 +12,7 @@
   "devDependencies": {
     "babel-jest": "^20.0.3",
     "babel-preset-react-native": "^2.0.0",
+    "gh-pages": "^1.0.0",
     "husky": "^0.13.4",
     "jest": "^20.0.4",
     "lint-staged": "^3.6.1",
@@ -31,10 +32,12 @@
   },
   "private": true,
   "scripts": {
+    "deploy": "gh-pages -d build",
     "bundle": "node node_modules/react-vr/scripts/bundle.js",
     "devtools": "react-devtools",
     "open": "node -e \"require('xopen')('http://localhost:8081/vr/')\"",
     "precommit": "lint-staged",
+    "prepush": "yarn bundle && yarn deploy",
     "start": "node -e \"console.log('open browser at http://localhost:8081/vr/\\n\\n');\" && node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
   }
